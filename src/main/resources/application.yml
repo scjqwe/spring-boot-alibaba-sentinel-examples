@@ -5,7 +5,30 @@ spring:
     name: alibaba-sentinel-examples
   cloud:
     sentinel:
+      eager: true
+      log:
+        dir: ../logs
+        switch-pid: true
       transport:
         dashboard: localhost:8080
       datasource:
-        
+        ds1:
+          zk:
+            server-addr: localhost:2181
+            path: /sentinel/alibaba-sentinel-examples
+            group-id: sentinel
+            data-id: sentinel-flow
+            
+datasource:
+  zookeeper:
+    serverAddr: localhost:2181
+    groupId: sentinel
+    flowDataId: sentinel-flow
+    degradeDataId: sentinel-degrade
+    systemDataId: sentinel-system
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    flowRuleKey: sentinel-flow
+    channel: sentinel
+    
