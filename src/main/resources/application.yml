@@ -18,6 +18,8 @@ spring:
             path: /sentinel/alibaba-sentinel-examples
             group-id: sentinel
             data-id: sentinel-flow
+      servlet:
+        blockPage: /busy
             
 datasource:
   zookeeper:
