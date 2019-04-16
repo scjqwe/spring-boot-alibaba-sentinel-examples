@@ -20,7 +20,6 @@ spring:
             data-id: sentinel-flow
       servlet:
         blockPage: /busy
-            
 datasource:
   zookeeper:
     serverAddr: localhost:2181
@@ -33,4 +32,3 @@ datasource:
     port: 6379
     flowRuleKey: sentinel-flow
     channel: sentinel
-    
